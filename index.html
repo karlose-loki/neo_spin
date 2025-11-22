@@ -1,1 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeoSpin — Play & Install</title>
+  <meta name="description" content="NeoSpin Casino — app download & install instructions for iOS and Android" />
+  <style>
+    :root{
+      --bg:#0f1112;
+      --panel:#171819;
+      --muted:#9aa098;
+      --accent:#39d13a;
+      --white:#ffffff;
+      --card:#0b0b0b;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#e7efe7;line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    header.topbar{
+      background:var(--panel);
+      display:flex;align-items:center;justify-content:space-between;padding:12px 18px;
+      position:sticky;top:0;z-index:80;border-bottom:1px solid rgba(255,255,255,0.03)
+    }
+    .left{display:flex;align-items:center;gap:18px}
+    .logo {
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:1px;
+    }
+    .logo-mark{background:linear-gradient(180deg,#2fd94a,#169f2c);padding:6px 10px;border-radius:6px;color:#071007;font-weight:900}
+    .brand{font-size:18px}
+    nav.topnav{display:flex;gap:12px;align-items:center}
+    nav.topnav a{padding:8px 10px;border-radius:8px;color:rgba(255,255,255,0.9);font-weight:700}
+    .actions{display:flex;align-items:center;gap:10px}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:#dfe; font-weight:700}
+    .btn-primary{background:var(--accent);color:#081207;padding:8px 12px;border-radius:10px;font-weight:900}
 
+    /* mobile header */
+    .mobile-header{display:none;background:var(--panel);padding:10px 14px;align-items:center;justify-content:space-between}
+    .hamb{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-size:20px}
+    .mobile-brand{display:flex;align-items:center;gap:10px;font-weight:800}
+
+    /* layout */
+    .wrap{max-width:1200px;margin:24px auto;padding:0 18px}
+    .hero{
+      border-radius:14px;padding:36px;color:var(--white);
+      background-image: linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.72)), url('/mnt/data/ab4b605b-29a3-47d2-93d4-35cf71efba2d.png');
+      background-size:cover;background-position:center;
+      box-shadow:0 8px 28px rgba(0,0,0,0.6);
+    }
+    .eyebrow{color:var(--accent);font-weight:900;letter-spacing:1.8px;font-size:13px}
+    .hero h1{font-size:36px;margin-top:8px}
+    .hero p{max-width:950px;color:rgba(255,255,255,0.9);margin-top:12px}
+
+    .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .cta-row .btn-primary{padding:12px 18px;font-size:15px}
+    .cta-row .btn-outline{padding:12px 18px;font-size:15px}
+
+    .content{display:grid;grid-template-columns:280px 1fr;gap:20px;margin-top:26px}
+    .sidebar{background:#101213;border-radius:12px;padding:14px}
+    .sidebar .square{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .item{background:#0b0c0d;padding:14px;border-radius:10px;text-align:center;font-weight:700;color:var(--muted)}
+
+    .support-box{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+    .support-box a{display:inline-block;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:700}
+
+    .article{background:transparent;color:#dfe; padding:10px 6px}
+    .article h2{color:var(--accent);font-size:26px;margin-bottom:10px}
+    .article p{color:rgba(255,255,255,0.9)}
+    .feature-img{width:320px;float:right;margin-left:18px;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,0.5)}
+
+    .download-cards{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .device-card{background:#0b0c0d;padding:16px;border-radius:12px;min-width:200px;flex:1 1 200px;text-align:center}
+    .device-card img{max-width:100%;height:auto;border-radius:8px}
+
+    .footer{margin-top:34px;padding:18px 0;color:var(--muted);text-align:center}
+
+    /* small */
+    @media (max-width:980px){
+      .content{grid-template-columns:1fr; }
+      .sidebar{order:2}
+      .mobile-header{display:flex}
+      header.topbar{display:none}
+      .feature-img{display:block;margin:18px auto 0;float:none;max-width:260px}
+      .hero h1{font-size:28px}
+    }
+
+    @media (max-width:480px){
+      .hero{padding:20px}
+      .eyebrow{font-size:12px}
+      .hero h1{font-size:22px}
+      .cta-row{flex-direction:column;align-items:flex-start}
+      .cta-row .btn-outline{margin-left:0}
+      .logo-mark{display:none}
+      .brand{font-size:16px}
+      .item{padding:12px;font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Desktop header -->
+  <header class="topbar" role="banner" aria-label="Topbar">
+    <div class="left">
+      <div class="logo" aria-hidden="true">
+        <div class="logo-mark">ne</div>
+        <div class="brand">Neo<span style="color:var(--accent)">spin</span></div>
+      </div>
+
+      <nav class="topnav" aria-label="Primary">
+        <a href="#">Pokies</a>
+        <a href="#">Sport</a>
+        <a href="#">Tournaments</a>
+        <a href="#">Bonuses</a>
+        <a href="#">Jackpots</a>
+      </nav>
+    </div>
+
+    <div class="actions">
+      <a class="btn-outline" href="#">Log In</a>
+      <a class="btn-primary" href="#">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- Mobile header -->
+  <header class="mobile-header" role="banner">
+    <button class="hamb" id="hambBtn" aria-label="Open menu">☰</button>
+    <div class="mobile-brand"><strong>neospin</strong></div>
+    <a class="btn-primary" href="download.html?platform=universal">Download</a>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" role="region" aria-label="Hero">
+      <div class="eyebrow">NEOSPIN</div>
+      <h1>Neospin Casino Mobile App for Android and iOS</h1>
+      <p>Our dedicated Neospin app allows players to play on the go with their smartphones — fast, secure and optimised for mobile. Download instructions for iOS and Android below.</p>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="download.html?platform=universal">DOWNLOAD &amp; PLAY</a>
+        <a class="btn-outline" href="#">PLAY ONLINE</a>
+      </div>
+    </section>
+
+    <div class="content">
+      <aside class="sidebar" aria-label="Sidebar">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <img src="/mnt/data/a4aca723-d588-4a88-a465-5eefb4835b92.png" alt="phone" style="width:44px;border-radius:8px">
+          <div>
+            <div style="font-weight:800;color:var(--accent)">CASHBACK UP TO 20%</div>
+            <div style="color:var(--muted);font-size:13px">Promotions</div>
+          </div>
+        </div>
+
+        <div class="square">
+          <div class="item">Pokies</div>
+          <div class="item">Sport</div>
+          <div class="item">Tournaments</div>
+          <div class="item">Bonuses</div>
+          <div class="item">Jackpots</div>
+          <div class="item">Loyalty</div>
+          <div class="item">Payments</div>
+          <div class="item">Support</div>
+        </div>
+
+        <div class="support-box">
+          <a href="download.html?platform=ios">Install App</a>
+          <a href="#">Support</a>
+        </div>
+      </aside>
+
+      <article class="article" aria-label="Article">
+        <h2>Neospin Casino Mobile App for Android and iOS</h2>
+        <p>Our dedicated Neospin app allows Aussies to gamble on-the-go with their smartphones. You get complete access to all our offerings, including big bonuses and thrilling tournaments.</p>
+
+        <img class="feature-img" src="/mnt/data/4c430706-bdfa-419c-9563-f2dd5ad100b9.png" alt="phone feature">
+
+        <h3 style="color:var(--accent);margin-top:8px">Your Guide to Using Neo Spin App</h3>
+        <p>Install instructions for Android (.apk) and iOS (Add to Home Screen) are available in the download page linked below.</p>
+
+        <div class="download-cards">
+          <div class="device-card">
+            <h4>Mobile</h4>
+            <p>iOS / Android</p>
+            <div style="margin-top:10px">
+              <a class="btn-outline" href="download.html?platform=ios">iOS</a>
+              <a class="btn-outline" href="#" onclick="openDualAndroid();return false;">Android</a>
+            </div>
+          </div>
+
+          <div class="device-card">
+            <h4>Desktop</h4>
+            <p>macOS / Windows</p>
+            <div style="margin-top:10px">
+              <a class="btn-outline" href="https://example.com/neospin-mac.dmg" target="_blank">MAC</a>
+              <a class="btn-outline" href="https://example.com/neospin-win.exe" target="_blank">WINDOWS</a>
+            </div>
+          </div>
+        </div>
+
+        <section style="margin-top:20px">
+          <h3 style="color:var(--accent)">Quick Access to Features</h3>
+          <p style="color:var(--muted)">Read more on the official Neospin site for app details and terms.</p>
+        </section>
+      </article>
+    </div>
+
+    <div class="footer">© Neospin — Terms · Privacy · Responsible Gaming</div>
+  </div>
+
+  <script>
+    // Replace these placeholders with real URLs when you deploy.
+    const IOS_APP_URL = 'https://your-ios-web-app-url.example';
+    const APK_URL = 'https://your-apk-url.example/neospin.apk';
+
+    // Android dual behavior: open APK and open instructions page in new tab
+    function openDualAndroid(){
+      try { window.open(APK_URL, '_blank', 'noopener'); } catch(e){ location.href = APK_URL; }
+      window.open('download.html?platform=android', '_blank', 'noopener');
+    }
+
+    // Mobile hamburger: do nothing (kept inert as requested)
+    document.getElementById('hambBtn')?.addEventListener('click', function(e){
+      // intentionally empty: mobile menu not implemented here
+    });
+  </script>
+</body>
+</html>

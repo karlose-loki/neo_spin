@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeoSpin — Download & Install</title>
+  <meta name="description" content="NeoSpin app install instructions for iOS and Android" />
+  <style>
+    :root{
+      --bg:#0f1112; --panel:#171819; --accent:#39d13a; --muted:#9aa098; --white:#fff;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#e7efe7}
+    header{background:var(--panel);padding:10px 14px;position:sticky;top:0;z-index:60}
+    .wrap{max-width:980px;margin:20px auto;padding:0 16px}
+    .hero{border-radius:10px;padding:28px;background-image:linear-gradient(180deg,rgba(0,0,0,0.56),rgba(0,0,0,0.7)), url('/mnt/data/ab4b605b-29a3-47d2-93d4-35cf71efba2d.png');background-size:cover;background-position:center;color:var(--white)}
+    .hero h1{font-size:28px}
+    .instr{background:#0b0c0d;padding:18px;border-radius:10px;margin-top:18px;box-shadow:0 8px 20px rgba(0,0,0,0.5)}
+    .detect{background:#101213;padding:12px;border-radius:8px;color:var(--muted);margin-bottom:12px}
+    .section-title{font-weight:800;color:var(--accent);margin-top:12px}
+    .muted{color:var(--muted);margin-top:8px}
+    .image-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:12px}
+    .image-row img{max-width:320px;width:100%;height:auto;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,0.6)}
+    .inline-cta{margin-top:14px}
+    .open-btn{background:var(--accent);color:#051205;padding:10px 14px;border-radius:8px;font-weight:800;text-decoration:none;display:inline-block}
+    .note{color:var(--muted);margin-top:10px}
+    @media (max-width:720px){
+      .hero h1{font-size:20px}
+      .image-row img{max-width:260px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:0 16px">
+      <div style="font-weight:800;color:var(--accent)">neospin</div>
+      <div><a href="index.html" style="color:#dfe;text-decoration:none">Home</a></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div style="opacity:0.95;font-weight:900">INSTALL / GUIDE</div>
+      <h1>Install NeoSpin</h1>
+      <p style="max-width:760px;color:rgba(255,255,255,0.9)">Follow the concise instructions for your device/browser — iOS (Safari), Chrome on iOS, or Android APK.</p>
+    </section>
+
+    <div class="instr" id="instruction-area">
+      <div id="detected" class="detect" style="display:none"></div>
+
+      <!-- iOS Safari -->
+      <div id="ios-safari" style="display:none">
+        <h3 class="section-title">iOS (Safari) — Add to Home Screen</h3>
+        <p class="muted">Open this page in <strong>Safari</strong> on your iPhone / iPad. Then tap <strong>Download</strong> below to open the web app that you will add to Home Screen.</p>
+
+        <div class="inline-cta">
+          <a id="openAppBtnSafari" class="open-btn" href="#" target="_blank" rel="noopener">Download</a>
+        </div>
+
+        <p class="section-title">Tap the Share button</p>
+        <div class="image-row"><img src="/mnt/data/4c430706-bdfa-419c-9563-f2dd5ad100b9.png" alt="Safari share example"></div>
+
+        <p class="section-title">Choose "Add to Home Screen"</p>
+        <div class="image-row"><img src="/mnt/data/a4aca723-d588-4a88-a465-5eefb4835b92.png" alt="Add to home screen"></div>
+
+        <p class="section-title">Tap "Add"</p>
+        <p class="muted">After adding, open the NeoSpin icon from your Home Screen — it will run like an app.</p>
+      </div>
+
+      <!-- iOS Chrome -->
+      <div id="ios-chrome" style="display:none">
+        <h3 class="section-title">iOS (Chrome) — Add to Home Screen</h3>
+        <p class="muted">Open this page in Chrome on iOS. Tap the menu (three dots / share) and choose <strong>Add to Home Screen</strong>. If unavailable, open in Safari and follow Safari steps.</p>
+
+        <div class="inline-cta">
+          <a id="openAppBtnChrome" class="open-btn" href="#" target="_blank" rel="noopener">Download</a>
+        </div>
+
+        <div class="image-row">
+          <img src="/mnt/data/a4aca723-d588-4a88-a465-5eefb4835b92.png" alt="Chrome add to home">
+        </div>
+      </div>
+
+      <!-- Android -->
+      <div id="android-block" style="display:none">
+        <h3 class="section-title">Android — Install APK</h3>
+        <p class="muted">Download the NeoSpin APK and install it. You may need to allow installation from unknown sources.</p>
+
+        <div class="inline-cta">
+          <a id="apkBtn" class="open-btn" href="#" target="_blank" rel="noopener">Download APK</a>
+        </div>
+
+        <div class="note">If your browser blocks downloads, open this page in Chrome and try again.</div>
+      </div>
+
+      <!-- fallback / preview -->
+      <div id="universal-block" style="display:none">
+        <h3 class="section-title">Preview — All Instructions</h3>
+        <p class="muted">Browser not detected — showing all instructions for preview/testing. Open the page in your phone's browser for the correct flow.</p>
+        <div id="copy-safari"></div>
+        <div id="copy-chrome"></div>
+        <div id="copy-android"></div>
+      </div>
+    </div>
+
+    <p style="height:18px"></p>
+    <p style="text-align:center;color:var(--muted)"><a href="index.html" style="color:var(--accent)">Back to NeoSpin</a></p>
+  </main>
+
+  <script>
+    // PLACEHOLDERS: replace with real links before deploying
+    const DEFAULT_IOS_APP_URL = 'https://your-ios-webapp.example';
+    const DEFAULT_APK_URL = 'https://your-apk.example/neospin.apk';
+
+    const params = new URLSearchParams(location.search);
+    const IOS_APP_URL = params.get('ios') || DEFAULT_IOS_APP_URL;
+    const APK_URL = params.get('apk') || DEFAULT_APK_URL;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const ua = navigator.userAgent || '';
+      const isAndroid = /Android/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
+      const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+      const isChrome = /Chrome|CriOS/i.test(ua);
+
+      const safariBlock = document.getElementById('ios-safari');
+      const chromeBlock = document.getElementById('ios-chrome');
+      const androidBlock = document.getElementById('android-block');
+      const universal = document.getElementById('universal-block');
+      const detected = document.getElementById('detected');
+
+      // show appropriate block
+      if (isAndroid) {
+        androidBlock.style.display = 'block';
+        detected.style.display = 'block';
+        detected.textContent = 'Device detected: Android — follow APK instructions below.';
+      } else if (isIOS && isSafari) {
+        safariBlock.style.display = 'block';
+        detected.style.display = 'block';
+        detected.textContent = 'Browser detected: Safari (iOS) — follow Safari instructions.';
+      } else if (isIOS && isChrome) {
+        chromeBlock.style.display = 'block';
+        detected.style.display = 'block';
+        detected.textContent = 'Browser detected: Chrome (iOS) — follow Chrome instructions.';
+      } else {
+        // preview show all
+        universal.style.display = 'block';
+        detected.style.display = 'block';
+        detected.textContent = 'Browser not recognized — preview of all instructions.';
+        document.getElementById('copy-safari').innerHTML = safariBlock.innerHTML;
+        document.getElementById('copy-chrome').innerHTML = chromeBlock.innerHTML;
+        document.getElementById('copy-android').innerHTML = androidBlock.innerHTML;
+      }
+
+      // wire buttons
+      const safariBtn = document.getElementById('openAppBtnSafari');
+      const chromeBtn = document.getElementById('openAppBtnChrome');
+      const apkBtn = document.getElementById('apkBtn');
+
+      function openAndCopy(url) {
+        window.open(url, '_blank', 'noopener');
+        // On desktop, copy to clipboard for convenience
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
+        if (!isMobile && navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(()=> {
+            alert('Link copied. Open it on your phone to add to Home Screen / install.');
+          }, ()=> {
+            prompt('Copy this link and open it on your phone:', url);
+          });
+        }
+      }
+
+      safariBtn?.addEventListener('click', (e)=> { e.preventDefault(); openAndCopy(IOS_APP_URL); });
+      chromeBtn?.addEventListener('click', (e)=> { e.preventDefault(); openAndCopy(IOS_APP_URL); });
+      apkBtn?.addEventListener('click', (e)=> { e.preventDefault(); openAndCopy(APK_URL); });
+
+      // expose for debugging
+      window.__NEOSPIN_INSTALL = { IOS_APP_URL, APK_URL, ua };
+    });
+  </script>
+</body>
+</html>
